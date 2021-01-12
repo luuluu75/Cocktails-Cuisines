@@ -3,37 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
-  crossorigin="anonymous"></script>
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-    />
+    <title>Cocktails and Cuisines</title>
+<!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css" />
-
 </head>
-<body>
 
-    <div>
+<body>
+<!--heading-->
+<div class="title-bar">
+    <div class="title-bar-center">
+         <span class="title-bar-title">Cocktails and Cuisines</span>
+    </div>
+</div>
+
+<!--image-->
+<div class="container" id="mainImg">
+    <div class="col-large-12">
+        <img src="placeholder" alt="foodie pic">
+    </div>
+</div>  
+
+<!--Search button for meals or cocktails-->
+
+<div class="grid-x grid-padding-x" id="search">
+    <div class="cell small-6 small-order-2 medium-order-1">
+        <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
+        <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="cell small-6 small-order-1 medium-order-2">
+        <input id="cocktail" type = "text" name="search" placeholder="Enter Cocktail name">
+        <button id = "drinkSearchBtn"><i class = "fa fa-search"></i><button>
+    </div>
+  </div>
     
-    <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
-                    <button id="mealSearchBtn">
-                    <i class="fa fa-search"></i>
-                    </button>
-    <input id="cocktail" type = "text" name="search" placeholder="Enter Cocktail name">
-        <button id = "drinkSearchBtn">
-            <i class = "fa fa-search"></i>
-            <button>
-    </div>               
+<!--display results - max 20 results-->
+<div class="container">
+    <h3>Search Results</h3>
+    <div class="container" id="searchResults">
+
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer">
+    <h3>Created by Foodie Friends</h3>
+</div>
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compressed JavaScript -->
 <script src="script.js"></script> 
 
 </body>
