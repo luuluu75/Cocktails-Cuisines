@@ -30,7 +30,7 @@ $(document).ready(function() {
     function saveMealsToLS(mealName){
 		if (searchedMeals.indexOf(mealName) === -1) {
 			searchedMeals.push(mealName);
-			localStorage.setItem("cities", JSON.stringify(searchedMeals))
+			localStorage.setItem("meals", JSON.stringify(searchedMeals))
 		}
 	}                	         
 })
