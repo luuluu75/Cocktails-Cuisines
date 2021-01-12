@@ -7,7 +7,18 @@ $(document).ready(function() {
 		// if city is empty     === empty set "" ....empty string
 		// alter city cannot be empty
 		searchMeals(meals);
-	}
+    }
+    // function makeRow(meals){
+	// 	var li = $("<li>");
+	// 	li.text(meals);
+	// 	$("#listMeals ul").append(li);
+    // }
+    
+
+    
+    // $("#mealList ul").on("click", "li", function(){
+    //     searchMeals($(this).text());
+    // })
     
     function searchMeals(meals){
         saveMealsToLS(meals);
@@ -19,8 +30,11 @@ $(document).ready(function() {
         url: queryURL,
          dataType: "json",  
         success: function(response){
-            console.log(response);
+            console.log(response.meals);
             console.log(queryURL);
+            var displayMeals  = (response.meals);
+                $("#mealList").append(meals);
+
 
         }
 
