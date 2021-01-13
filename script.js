@@ -32,10 +32,11 @@ $(document).ready(function() {
         success: function(response){
             console.log(response.meals);
             console.log(queryURL);
-            var displayMeals  = (response.meals);
-                $("#mealList").append(meals);
+            //for loop??
+            for ( var i = 0; i < response.length; i++) {  
+                console.log(response[i]);
 
-
+            }
         }
 
     })
