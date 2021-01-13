@@ -33,8 +33,18 @@ $(document).ready(function() {
             console.log(response.meals);
             console.log(queryURL);
             //for loop??
-            for ( var i = 0; i < response.length; i++) {  
-                console.log(response[i]);
+            for ( var i = 0; i < response.meals.length; i++) {  
+                //console.log(response.meals[i]);
+                var callMeals = (response.meals[i].strMeal);
+                console.log(callMeals);
+                $('#searchResults').append('<li>'+callMeals+'</li>');
+                //$("#searchResults").append(callMeals);
+                // $('button').click(function() {
+                //     var mealList = $('#input').val();
+                //     $('#list').append('<li>'+mealList+'</li>');
+                //     //return false;
+                //  });
+
 
             }
         }
