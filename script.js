@@ -32,13 +32,20 @@ $(document).ready(function() {
         success: function(response){
             console.log(response.meals);
             console.log(queryURL);
-            //for loop??
+            
             for ( var i = 0; i < response.meals.length; i++) {  
                 //console.log(response.meals[i]);
                 var callMeals = (response.meals[i].strMeal);
                 console.log(callMeals);
                 $('#searchResults').append('<li>'+callMeals+'</li>');
+                
+                // $("#searchRsults ul").on("click", "li", function(){
+                //     searchMeals($(this).text());
+
+                // })
+                
                 //$("#searchResults").append(callMeals);
+                
                 // $('button').click(function() {
                 //     var mealList = $('#input').val();
                 //     $('#list').append('<li>'+mealList+'</li>');
