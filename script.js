@@ -8,22 +8,28 @@ $(document).ready(function() {
 		// alter city cannot be empty
 		searchMeals(meals);
     }
-    // function makeRow(meals){
-	// 	var li = $("<li>");
-	// 	li.text(meals);
-	// 	$("#listMeals ul").append(li);
-    // }
-    function registerClickListeners(){
-        $(".mealClass)").on('click', function(){
+    
+    // function registerClickListeners(){
+    //     $(".mealClass)").on('click', grabInput)
+    //     function grabInput(){
+    //         var recipeGrab = $('li').val(); 
+    //     }
+            //OR
+    //  $("#searchResults ul").on("click", "li", function(){
+    //      searchMeals($(this).text());
+        }
+    // })
+            //$('li').window.open('file.""');
+            //window.open('')
+            //value of whatevers clicked save to ls
             //open page on click of me with name of what was clicked
             //Scroll to bottom for execution of registerClickListeners
-        })
-    }
+            //$(document.body)('click').click(function() { window.open('file:///path/to/a/local/html/file.html'); });
+       // })
+   // }
 
     
-    // $("#mealList ul").on("click", "li", function(){
-    //     searchMeals($(this).text());
-    // })
+    
     
     function searchMeals(meals){
         saveMealsToLS(meals);
@@ -41,9 +47,14 @@ $(document).ready(function() {
             for ( var i = 0; i < response.meals.length; i++) {  
                 //console.log(response.meals[i]);
                 
-                var callMeals = (response.meals[i].strMeal);
-                console.log(callMeals);
-                $('#searchResults').append('<li>'+callMeals+'</li>');
+                var callMeals = `<li class="mealClass">${response.meals[i].strMeal} </li> `;
+                // (response.meals[i].strMeal);
+                //console.log(callMeals);
+                $('#searchResults').append(callMeals);
+                
+                
+                //$('#searchResults').append('<li>'+callMeals+'</li>',{class: 'mealClass'});
+              
                 
                 // $("#searchRsults ul").on("click", "li", function(){
                 //     searchMeals($(this).text());
@@ -62,7 +73,7 @@ $(document).ready(function() {
 
             }
             //Adding class to 'li' in order to execute click function
-            $('li').addclass('mealClass');
+            //$('li').addclass('mealClass');
             
             // $('mealClass').class(onclick);
             //$(selector).addClass(classname,function(index,currentclass))
