@@ -17,7 +17,7 @@ $(document).ready(function() {
             //OR
     //  $("#searchResults ul").on("click", "li", function(){
     //      searchMeals($(this).text());
-        }
+        //}
     // })
             //$('li').window.open('file.""');
             //window.open('')
