@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var searchResults;
+    var searchResultsDrinks;
     var LookupDrinks = JSON.parse(localStorage.getItem("drinks")) || [];
     $("#drinkSearchBtn").on("click", function() {
         var drinks = $("#drinkName").val();
@@ -9,8 +9,8 @@ $(document).ready(function() {
     function grabInput() {
         var datTest = $(this).attr("data-drinkid");
         console.log(datTest);
-        console.log(searchResults);
-        var arrayItem = searchResults.find(element => element.idDrink === datTest);
+        console.log(searchResultsDrinks);
+        var arrayItem = searchResultsDrinks.find(element => element.idDrink === datTest);
         console.log(arrayItem);
     }
 
@@ -28,11 +28,11 @@ $(document).ready(function() {
             url: queryURL,
             dataType: "json",
             success: function(response) {
-                searchResults = response.drinks;
-                console.log(searchResults);
-                for (var i = 0; i < searchResults.length; i++) {
+                searchResultsDrinks = response.drinks;
+                console.log(searchResultsDrinks);
+                for (var i = 0; i < searchResultsDrinks.length; i++) {
                     var callDrinks = `<li class="drinkClass" data-drinkid="${response.drinks[i].idDrink}"'>${response.drinks[i].strDrink} </li> `;
-                    $("#searchResults").append(callDrinks);
+                    $("#searchResultsDrinks").append(callDrinks);
                 }
                 registerClickListeners()
             }
