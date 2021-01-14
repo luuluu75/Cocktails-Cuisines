@@ -1,15 +1,26 @@
 $(document).ready(function() {
+    var searchResults ;
+    
     var searchedMeals = JSON.parse(localStorage.getItem("meals")) || []; 
-    $("#mealSearchBtn").on("click", grabInput)
+    $("#mealSearchBtn").on("click", function(){
+        var meals = $("#mealName").val();
+        searchMeals(meals);
+    })
     function grabInput(){
-	
-		var meals = $("#mealName").val();
+        var datTest =
+        $(this).attr("data-mealid");
+        console.log(datTest);
+        console.log(searchResults);
+        var arrayItem = searchResults.find(element => element.idMeal === datTest);
+        console.log(arrayItem);
 		
-		searchMeals(meals);
+		
+		
     }
     function registerClickListeners(){
         $(".mealClass").on('click', grabInput);
-}
+
+}       //searchedMeals($(this).text());
     
     // function registerClickListeners(){
     //     $(".mealClass").on('click', grabInput)
@@ -18,7 +29,7 @@ $(document).ready(function() {
     //     }
             //OR
     //  $("#searchResults ul").on("click", "li", function(){
-    //      searchMeals($(this).text());
+    //      ;
        // }
     // })
             //$('li').window.open('file.""');
@@ -45,14 +56,15 @@ $(document).ready(function() {
         success: function(response){
             console.log(response.meals);
             //console.log(queryURL);
-            
+            searchResults=response.meals;
             for ( var i = 0; i < response.meals.length; i++) {  
-                //console.log(response.meals[i]);
+              //  console.log(response.meals[i]);
                 
-                var callMeals = `<li class="mealClass">${response.meals[i].strMeal} </li> `;
+                var callMeals = `<li class="mealClass" data-mealid="${response.meals[i].idMeal}"'>${response.meals[i].strMeal} </li> `;
                 // (response.meals[i].strMeal);
                 //console.log(callMeals);
                 $('#searchResults').append(callMeals);
+
                 
                 
                 //$('#searchResults').append('<li>'+callMeals+'</li>',{class: 'mealClass'});
