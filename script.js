@@ -4,13 +4,15 @@ $(document).ready(function() {
     function grabInput(){
 	
 		var meals = $("#mealName").val();
-		// if city is empty     === empty set "" ....empty string
-		// alter city cannot be empty
+		
 		searchMeals(meals);
     }
+    function registerClickListeners(){
+        $(".mealClass").on('click', grabInput);
+}
     
     // function registerClickListeners(){
-    //     $(".mealClass)").on('click', grabInput)
+    //     $(".mealClass").on('click', grabInput)
     //     function grabInput(){
     //         var recipeGrab = $('li').val(); 
     //     }
@@ -42,7 +44,7 @@ $(document).ready(function() {
          dataType: "json",  
         success: function(response){
             console.log(response.meals);
-            console.log(queryURL);
+            //console.log(queryURL);
             
             for ( var i = 0; i < response.meals.length; i++) {  
                 //console.log(response.meals[i]);
