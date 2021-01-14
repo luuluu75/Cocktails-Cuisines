@@ -13,7 +13,12 @@ $(document).ready(function() {
 	// 	li.text(meals);
 	// 	$("#listMeals ul").append(li);
     // }
-    
+    function registerClickListeners(){
+        $(".mealClass)").on('click', function(){
+            //open page on click of me with name of what was clicked
+            //Scroll to bottom for execution of registerClickListeners
+        })
+    }
 
     
     // $("#mealList ul").on("click", "li", function(){
@@ -35,12 +40,14 @@ $(document).ready(function() {
             
             for ( var i = 0; i < response.meals.length; i++) {  
                 //console.log(response.meals[i]);
+                
                 var callMeals = (response.meals[i].strMeal);
                 console.log(callMeals);
                 $('#searchResults').append('<li>'+callMeals+'</li>');
                 
                 // $("#searchRsults ul").on("click", "li", function(){
                 //     searchMeals($(this).text());
+                //callback
 
                 // })
                 
@@ -54,6 +61,15 @@ $(document).ready(function() {
 
 
             }
+            //Adding class to 'li' in order to execute click function
+            $('li').addclass('mealClass');
+            
+            // $('mealClass').class(onclick);
+            //$(selector).addClass(classname,function(index,currentclass))
+
+            //add here. class selector. assignt class to li.
+            //click listener
+            registerClickListeners()
         }
 
     })
