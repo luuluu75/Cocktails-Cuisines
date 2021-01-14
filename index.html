@@ -13,43 +13,46 @@
 
 <body>
 <!--heading-->
-<div class="title-bar">
-    <div class="title-bar-center">
-         <span class="title-bar-title">Cocktails and Cuisines</span>
-    </div>
+<div class="top-bar">
+    <h1>Cocktails and Cuisines</h1>
 </div>
 
 <!--image-->
-<div class="container" id="mainImg">
-    <div class="col-large-12">
-        <img src="placeholder" alt="foodie pic">
-    </div>
+<div class="media-object" id="mainImg">
+     <img src="placeholder" alt="foodie pic" class="float-center">
 </div>  
-
+  
 <!--Search button for meals or cocktails-->
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <div class="cell small-5">
+            <input id="mealName" type="text" name="search" placeholder="Enter Meal name..."> 
+        </div>
+        <div class="cell small-1">
+            <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="cell small-5">
+            <input id="cocktail" type = "text" name="search" placeholder="Enter Cocktail name...">
+        </div>  
+        <div class="cell small-1">
+            <button type="button" button id="drinkSearchBtn"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</div>
 
-<div class="grid-x grid-padding-x" id="search">
-    <div class="cell small-6 small-order-2 medium-order-1">
-        <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
-        <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
-    </div>
-    <div class="cell small-6 small-order-1 medium-order-2">
-        <input id="cocktail" type = "text" name="search" placeholder="Enter Cocktail name">
-        <button id = "drinkSearchBtn"><i class = "fa fa-search"></i><button>
-    </div>
-  </div>
+
     
-<!--display results - max 20 results-->
-<div class="container">
-    <h3>Search Results</h3>
-    <div class="container" id="searchResults">
-
+<!--display results - max 20 results
+<div class="grid-x" id="searchResults">-->
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <h3>Your Results</h3>
     </div>
 </div>
 
 <!--footer-->
-<div class="footer">
-    <h3>Created by Foodie Friends</h3>
+<div class="top-bar">
+    <h4>Copyright by Foodie Friends</h4>
 </div>
     
 <!-- Compressed JavaScript -->
