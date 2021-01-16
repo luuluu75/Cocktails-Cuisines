@@ -13,8 +13,9 @@ $(document).ready(function() {
         console.log(searchResults);
         var arrayItem = searchResults.find(element => element.idMeal === datTest);
         console.log(arrayItem);
+        $(".accordion-content").append(arrayItem);
 		
-		
+		//append to accordian
 		
     }
     function registerClickListeners(){
@@ -63,7 +64,7 @@ $(document).ready(function() {
                 var callMeals = `<li class="mealClass" data-mealid="${response.meals[i].idMeal}"'>${response.meals[i].strMeal} </li> `;
                 // (response.meals[i].strMeal);
                 //console.log(callMeals);
-                $('#searchResults').append(callMeals);
+                $('#searchResultsTab').append(callMeals);
 
                 
                 
