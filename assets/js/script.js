@@ -15,7 +15,7 @@ $(document).ready(function() {
         console.log(arrayItem);
         $(".accordion-content").append(arrayItem);
 		
-		
+		//append to accordian
 		
     }
     function registerClickListeners(){
