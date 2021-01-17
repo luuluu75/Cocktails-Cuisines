@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css"/>
-
 </head>
 
 <body>
@@ -19,32 +18,42 @@
     </div>
 
     <!--image-->
-    <div class="media-object" id="mainImg">
-        <img src="#" alt="foodie pic" class="float-center">
-    </div>
-
-    <!--Search button for meals or cocktails-->
     <div class="grid-container">
-        <div class="grid-x grid-margin-x" id="searchbar">
-            <div class="cell small-5">
-                <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
-            </div>
-            <div class="cell small-1">
-                <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="cell small-5">
-                <input id="drinkName" type="text" name="search" placeholder="Enter Cocktail name...">
-            </div>
-            <div class="cell small-1">
-                <button type="button" button id="drinkSearchBtn"><i class="fa fa-search"></i></button>
-            </div>
+        <div class="media-object" id="mainImg">
+            <img src="#" alt="foodie pic" class="float-center">
         </div>
     </div>
 
-<!--display results - max 20 results
-<div class="grid-x" id="searchResults">-->
+
+    <div class="grid-container">
+        <h3>Search</h3>
+        <div class="grid-x grid-margin-x align-center" id="searchbar">
+            <div class="column large-6">
+                <div class="searchInput">
+                    <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
+                </div>
+            </div>
+            <div class="column large-4">
+                <div class="dropdownMenu">
+                    <select>
+                        <option value="default"></option>
+                        <option value="meals">Meals</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column large-2">
+                <div class="button">
+                    <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+
+<!--display results - max 20 results-->
     <div class="grid-container" id="mainContent">
-        <h3>Search Results</h3>
+        <h3>Results</h3>
             <ul class="accordion" data-accordion id="searchResultsTab">
                 <li class="accordion-item" data-accordion-item>
                   <!-- Accordion tab title -->
@@ -57,13 +66,23 @@
             </ul>
     </div>
 
-    <!--display results - max 20 results-->
+    <!--placement of embedded video-->
+    <div class="grid-container" id="mediaContent">
+        <div class="media-object">
+            <div class="media-object-section middle">
+              <div class="thumbnail">
+                <img src= "assets/img/media-object/avatar-2.jpg">
+              </div>
+            </div>
+    </div>
+
+    <!--display results - max 20 results
     <div class="grid-x" id="searchResults">
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
             <h3>Your Results</h3>
         </div>
-    </div>
+    </div>-->
 
     <!--footer-->
     <div class="top-bar" id="footer">
