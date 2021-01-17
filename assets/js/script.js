@@ -6,28 +6,48 @@ $(document).ready(function() {
     // $(document).foundation.accordion.js();
     // $(document).foundation.util.keyboard.js();
     var searchResults ;
+    var responseMeals;
     
     var searchedMeals = JSON.parse(localStorage.getItem("meals")) || []; 
     $("#mealSearchBtn").on("click", function(){
         var meals = $("#mealName").val();
         searchMeals(meals);
+
+
+
     })
+
     function grabInput(){
-        var datTest =
-        $(this).attr("data-mealid");
-        console.log(datTest);
-        console.log(searchResults);
-        var arrayItem = searchResults.find(element => element.idMeal === datTest);
-        console.log(arrayItem);
-        $(".accordion-content").append(arrayItem);
+
+        var mealId = $(this).attr("meal-id");
+        console.log(mealId);
+        console.log(responseMeals);
+
+        var clickedMeal = responseMeals.filter(function(meal){
+            return meal.idMeal === mealId;
+        })
+
+        // let recipeInstuction = clickedMeal.strInstruction
+        // let video = clickedMeal.strVideo
+
+        // let example = `<p>
+        //             Video courtesy of 
+        //             <a href=\"${video}\" target="_blank">Big Buck Bunny</a>.
+        //             </p>`
+        // console.log(clickedMeal);
+
+        // console.log(searchResults);
+        // var arrayItem = searchResults.find(element => element.idMeal === datTest);
+        // console.log(arrayItem);
+        // $(".accordion-content").append(arrayItem);
 		
 		//append to accordian
 		
     }
     function registerClickListeners(){
-        $(".mealClass").on('click', grabInput);
+        $(".accordion-item").on('click', grabInput);
 
-}       //searchedMeals($(this).text());
+    }       //searchedMeals($(this).text());
     
     // function registerClickListeners(){
     //     $(".mealClass").on('click', grabInput)
@@ -49,6 +69,18 @@ $(document).ready(function() {
    // }
 
     
+    $("#mealName").on("keypress", function(){
+        if(event.keyCode == 13){
+           var meal = ($(this)).val();
+           console.log(meal);
+           searchMeals(meal);
+        }
+    })
+
+
+    // $("#drinksName").on("keypress", function(){
+      
+    // })
     
     
     function searchMeals(meals){
@@ -61,16 +93,24 @@ $(document).ready(function() {
         url: queryURL,
          dataType: "json",  
         success: function(response){
+            responseMeals = response.meals
             console.log(response.meals);
             //console.log(queryURL);
             searchResults=response.meals;
-            for ( var i = 0; i < response.meals.length; i++) {  
+            for ( var i = 0; i < 5; i++) {  
               //  console.log(response.meals[i]);
+              let meal = `<li class=\"accordion-item\" meal-id = ${response.meals[i].idMeal} data-accordion-item data-allow-all-closed='true' >
+                  <!-- Accordion tab title -->
+                  <a href=\"#\" class=\"accordion-title\">${response.meals[i].strMeal} </a>
+                </li>`
+            
+                console.log(meal);
                 
-                var callMeals = `<li class="mealClass" data-mealid="${response.meals[i].idMeal}"'>${response.meals[i].strMeal} </li> `;
-                // (response.meals[i].strMeal);
-                //console.log(callMeals);
-                $('#searchResultsTab').append(callMeals);
+                // var callMeals = `<li class="mealClass" data-mealid="${response.meals[i].idMeal}"'>${response.meals[i].strMeal} </li> `;
+                // // (response.meals[i].strMeal);
+                // //console.log(callMeals);
+                // $('#searchResultsTab').append(callMeals);
+                $('#searchResultsTab').append(meal);
 
                 
                 
