@@ -1,4 +1,10 @@
+
 $(document).ready(function() {
+    //$(document).foundation;
+   // $(document).foundation('reveal', 'open');
+    //$(document).foundation();
+    // $(document).foundation.accordion.js();
+    // $(document).foundation.util.keyboard.js();
     var searchResults ;
     
     var searchedMeals = JSON.parse(localStorage.getItem("meals")) || []; 
@@ -107,4 +113,5 @@ $(document).ready(function() {
 			localStorage.setItem("meals", JSON.stringify(searchedMeals))
 		}
 	}                	         
+    $(document).foundation();
 })
