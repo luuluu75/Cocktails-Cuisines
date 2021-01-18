@@ -51,16 +51,25 @@
             <!--display results - max 20 results-->
             <div class="grid-container" id="results-wrapper">
                 <h3>Results</h3>
-                    <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
-                        <li class="accordion-item" data-accordion-item>
-                            <!-- Accordion tab title -->
-                            <a href="#" class="accordion-title">Accordion 1</a>
-                            <div class="accordion-content" data-tab-content>
-                                <p>Panel 1. Lorem ipsum dolor</p>
-                                <a href="#">Nowhere to Go</a>
-                            </div>
-                        </li>
-                    </ul>
+                <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
+                    <!--Create below in JS-->
+                    <li class="accordion-item" data-accordion-item>
+                        <a href="#" class="accordion-title">Recipe Name</a>
+                        <div class="accordion-content" data-tab-content>
+                            <img src="#" id="recipeImg">
+                            <ul>
+                                <h3>Ingredients</h3>
+                                <li>display ingredients</li>
+                            </ul>
+                            <br>
+                            <ol>
+                                <h3>Instructions</h3>
+                                <li>display instructions</li>
+                            </ol>
+                            <a href="#" class="video"></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <!--placement of embedded video-->
