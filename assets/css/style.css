@@ -1,11 +1,10 @@
 html, body {
     height: 100%;
-  }
+}
   
- /* Ensure background(s) fill whiteSpace */
+/* Ensure background(s) fill whiteSpace */
 body,
-img,
-(contentDiv) {
+img {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,121 +13,113 @@ img,
   
 /* Apply googleFonts? */
 body {
-    background-image: url(#);
-    font-family: #;
+    background-image: url(https://us.123rf.com/450wm/annakristal/annakristal1702/annakristal170200381/71109637-seamless-pattern-cute-template-for-restaurant-menu-ice-cream-and-fruits-seamless-pattern-pastel-colo.jpg?ver=6);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1;
-}
-  
-/* Apply googleFonts? */
-h1 {
-    font-family: #;
-    font-weight: bolder;
-}
-  
-/* Add border-radius to divs for rounded corners? */
-(divCorners) {
-    border-radius: 15px;
-}
-
-textarea {
-    background: transparent;
-    background-color:palevioletred;
-    border: none;
-    border-left: 1px solid black;
-    color: lightyellow;
-    opacity: 0.75;
-    padding: 10px;
-    resize: none;
-    width: 60%;
-}
-  
-(centerTxt) {
     text-align: center;
 }
-  
-(headerBG) {
-    background-color: rgba(255, 182, 193, 0.5);
-    border-radius: 3%;
-    display: inline-block;
-    width: 50%;
-}
-  
-(containerSpacing) {
-    margin-bottom: 60px;
-}
-  
-img {
-    border-radius: 50px;
-    float: left;
-    height: 100%;
-    margin-right: 50px;
-    opacity: 0.9;
-    width: 30%;
-}
-  
-(divText) {
-    font-size: 16px;
-    white-space: pre-wrap;
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* If applicable... */
-.row {
-    border-top: 1px solid white;
-    height: 80px;
-    white-space: pre-wrap;
+.page-body {
+    flex-grow: 1;
+    margin: 50px;
 }
-  
-(resultBG) {
-    background-color: lightpink;
+
+header,
+footer {
+  flex-shrink: 0;
+  background-color: teal;
+  color: white;
+}
+
+h1,
+h4 {
+    font-family: Georgia, 'Times New Roman', Times, Georgia, Times, 'Times New Roman', serif;
+}
+
+img {
+    width: auto;
+    margin-bottom: 25px;
+}
+
+#search-wrapper {
+    background-color: pink !important;
     border-radius: 5px;
-    border-top: 1px dashed #000000;
-    color: darkslategrey;
-    opacity: 0.95;
-    padding: 10px;
-    width: 20%;
+    padding: 25px;
 }
-  
-(searchBtn) {
-    background-color: steelblue;
-    border-bottom-right-radius: 15px;
-    border-left: 1px solid dimgray;
-    border-top-right-radius: 15px;
+
+.dropbtn {
+    background-color: lightblue;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     color: white;
-    opacity: 0.9;
-    width: 20%;
 }
-  
-(btnHover),
-(dropdown/Hover?) i:hover {
-    font-size: 20px;
-    transition: all .3s ease-in-out;
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
 }
-  
-.footer {
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: lightgreen;
+}
+
+#searchBtn {
+    background-color: grey;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#results-wrapper {
     background-color: lightgray;
-    color: #2e2e2e;
-    flex-shrink: 0;
+    border-radius: 5px;
+}
+
+a {
+    color: darkgray;
+}
+
+footer {
     margin-top: 15px;
     padding-bottom: 15px;
     padding-top: 25px;
     width: 100%;
-}
-  
-@media screen and (max-width: 768px), screen and (max-width: 575px) {
-h1{
-    font-size: 60px !important;
-}
-
-(divText){
-    font-size:16px;
-}
-
-img {
-    display: none;
-}
-
-(btnResize)) {
-    width: 100%;
-}
 }
