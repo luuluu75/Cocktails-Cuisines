@@ -12,66 +12,93 @@
 </head>
 
 <body>
-    <!--heading-->
-    <div class="top-bar">
-        <h1>Cocktails and Cuisines</h1>
-    </div>
+    <div class="wrapper">
+        <!--heading-->
+        <header>
+            <h1>Cocktails and Cuisines</h1>
+        </header>
 
-    <!--image-->
-    <div class="media-object" id="mainImg">
-        <img src="placeholder" alt="foodie pic" class="float-center">
-    </div>
-
-    <!--Search button for meals or cocktails-->
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <div class="cell small-5">
-                <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
+        <main class="page-body">
+            <!--image-->
+            <div class="media-object" id="mainImg">
+                <img src="assets/imgs/food-banner.jpg" alt="foodie pic" class="float-center">
             </div>
-            <div class="cell small-1">
-                <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="cell small-5">
-                <input id="drinkName" type="text" name="search" placeholder="Enter Cocktail name...">
-            </div>
-            <div class="cell small-1">
-                <button type="button" button id="drinkSearchBtn"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-    </div>
 
-<!--display results - max 20 results
-<div class="grid-x" id="searchResults">-->
-    <div class="grid-container" >
-        <h3>Search Results</h3>
-        <div class="grid-x grid-margin-x">
-            <ul class="accordion" data-accordion id="searchResultsTab">
-                <li class="accordion-item is-active" data-accordion-item>
-                  <!-- Accordion tab title -->
-                  <a href="#" class="accordion-title">Accordion 1</a>
-              
-                  <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
-                  <div class="accordion-content" data-tab-content>
-                    <p>Panel 1. Lorem ipsum dolor</p>
-                    <a href="#">Nowhere to Go</a>
-                  </div>
-                </li>
-                <!-- ... -->
-              </ul>
-        </div>
-    </div>
+            <!--Search button for meals or cocktails-->
+            <div class="grid-container">
+                <div class="grid-x gri d-margin-x" id="search-wrapper">
+                    <div class="cell small-5">
+                        <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
+                    </div>
+                    <div class="cell small-1">
+                        <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
+                    </div>
+                    <div class="cell small-5">
+                        <input id="drinkName" type="text" name="search" placeholder="Enter Cocktail name...">
+                    </div>
+                    <div class="cell small-1">
+                        <button type="button" button id="drinkSearchBtn"><i class="fa fa-search"></i></button>
+                    </div>
 
-    <!--display results - max 20 results
-<div class="grid-x" id="searchResults">-->
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <h3>Your Results</h3>
-        </div>
-    </div>
+                    <!-- Combine search bar & btn w/meals or cocktails dropdown selection -->
+                    <div class="cell small-8">
+                        <input id="searchBar" type="text" name="search" placeholder="Enter Meal or Cocktail name...">
+                    </div>
+                    
+                    <div class="dropdown cell small-2" >
+                        <button class="dropbtn">Category</button>
+                        <div class="dropdown-content">
+                            <a href="#">Meals</a>
+                            <a href="#">Cocktails</a>
+                        </div>
+                    </div>
 
-    <!--footer-->
-    <div class="top-bar">
-        <h4>Copyright by Foodie Friends</h4>
+                    <div class="cell small-2">
+                        <button id="searchBtn">Search <i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!--display results - max 20 results
+            <div class="grid-x" id="searchResults">-->
+            <div class="grid-container" >
+                <h3>Search Results</h3>
+                <div class="grid-x grid-margin-x" id="results-wrapper">
+                    <ul class="accordion" data-accordion id="searchResultsTab">
+                        <li class="accordion-item is-active" data-accordion-item>
+                            <!-- Accordion tab title -->
+                            <a href="#" class="accordion-title">Accordion 1</a>
+                        
+                            <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
+                            <div class="accordion-content" data-tab-content>
+                                <p>Panel 1. Lorem ipsum dolor</p>
+                                <a href="#">Nowhere to Go</a>
+                            </div>
+                        </li>
+                        <!-- ... -->
+                    </ul>
+                </div>
+            </div>
+
+            <!--display results - max 20 results
+            <div class="grid-x" id="searchResults">-->
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <h3>Your Results</h3>
+                </div>
+            </div>
+        </main>
+
+        <!--footer-->
+        <footer>
+            <h4>Copyright by Foodie Friends</h4>
+            <p>
+                <a href="#">luuluu75</a> | 
+                <a href="#">MissNG-Git</a> | 
+                <a href="#">FraserClarke</a> | 
+                <a href="#">aksCo</a>
+            </p>
+        </footer>
     </div>
 
     <!-- Compressed JavaScript -->
