@@ -27,7 +27,7 @@
 
     <div class="grid-container">
         <h3>Search</h3>
-        <div class="grid-x grid-margin-x align-center" id="searchbar">
+        <div class="grid-x grid-margin-x align-spaced" id="searchbar">
             <div class="column large-6">
                 <div class="searchInput">
                     <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
@@ -54,16 +54,26 @@
 <!--display results - max 20 results-->
     <div class="grid-container" id="mainContent">
         <h3>Results</h3>
-            <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
-                <li class="accordion-item" data-accordion-item>
-                  <!-- Accordion tab title -->
-                  <a href="#" class="accordion-title">Accordion 1</a>
-                  <div class="accordion-content" data-tab-content>
-                    <p>Panel 1. Lorem ipsum dolor</p>
-                    <a href="#">Nowhere to Go</a>
-                  </div>
-                </li>
-            </ul>
+
+        <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
+            <!--Create below in JS-->
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title">Recipe Name</a>
+                <div class="accordion-content" data-tab-content>
+                    <img src="#" id="recipeImg">
+                    <ul>
+                        <h3>Ingredients</h3>
+                        <li>display ingredients</li>
+                    </ul>
+                    <br>
+                    <ol>
+                        <h3>Instructions</h3>
+                        <li>display instructions</li>
+                    </ol>
+                    <a href="#" class="video"></a>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <!--placement of embedded video-->
@@ -74,6 +84,7 @@
                 <img src= "assets/img/media-object/avatar-2.jpg">
               </div>
             </div>
+        </div>
     </div>
 
     <!--display results - max 20 results
@@ -94,7 +105,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="assets/js/drinkscript.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script2.js"></script>
 
 </body>
 
