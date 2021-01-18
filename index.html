@@ -29,36 +29,40 @@
 
 
     <div class="grid-container">
-                <div class="grid-x gri d-margin-x" id="search-wrapper">
-                    <!-- Combine search bar & btn w/meals or cocktails dropdown selection -->
-                    <div class="column large-6">
-                        <input id="searchBar" type="text" name="search" placeholder="Enter Meal or Cocktail name...">
-                    </div>
-
-                    <div class="column large-4">
-                        <div class="dropdownMenu">
-                            <select>
-                                <option value="default"></option>
-                                <option value="meals">Meals</option>
-                                <option value="drinks">Drinks</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="column large-2">
-                        <button id="searchBtn">Search <i class="fa fa-search"></i></button>
-                    </div>
+        <h3>Search</h3>
+        <div class="grid-x grid-margin-x align-center" id="searchbar">
+            <div class="col-md-6">
+                <div class="searchInput">
+                    <input id="mealName" type="text" name="search" placeholder="Enter Meal name...">
                 </div>
             </div>
+            <div class="column large-4">
+                <div class="dropdownMenu">
+                    <select>
+                        <option value="default"></option>
+                        <option value="meals">Meals</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column large-2">
+                <div class="button">
+                    <button id="mealSearchBtn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+       
 
-            <!--display results - max 20 results-->
-            <div class="grid-container" id="results-wrapper">
-                <h3>Results</h3>
-                    <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
-                        <li class="accordion-item" data-accordion-item>
-                            <!-- Accordion tab title -->
-                            <a href="#" class="accordion-title">Accordion 1</a>
-                            <div class="accordion-content" data-tab-content>
+<!--display results - max 20 results-->
+    <div class="grid-container" id="mainContent">
+        <h3>Results</h3>
+
+        <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
+            <!--Create below in JS-->
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title">Recipe Name</a>
+                <div class="accordion-content" data-tab-content>
                     <img src="#" id="recipeImg">
                     <ul>
                         <h3>Ingredients</h3>
@@ -94,7 +98,7 @@
         </div>
     </div>-->
 
-            <!--footer-->
+    <!--footer-->
     <div class="top-bar" id="footer">
         <h4>Copyright by Foodie Friends</h4>
                 <p>
