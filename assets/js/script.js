@@ -203,8 +203,8 @@ $(document).ready(function() {
                     //       <!-- Accordion tab title -->
                     //       <a href=\"#\" class=\"accordion-title\">${response.meals[i].strMeal} </a>
                     //     </li>`
-
-                    var accordianMealTest =
+                    if (response.meals[i] != undefined)
+                    { var accordianMealTest =
                         `<div class="grid-container" id="mainContent">
                 
                     <ul class="accordion" data-accordion data-allow-all-closed="true" >
@@ -229,6 +229,8 @@ $(document).ready(function() {
                     $('#searchResultsTab').append(accordianMealTest);
 
                 }
+                        
+                   
 
                 //click listener
                 registerClickListeners()
