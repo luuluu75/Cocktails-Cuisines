@@ -13,9 +13,9 @@ $(document).ready(function() {
 
     })
 
-    function grabInput(){
-        clear();
-
+    function grabInput(event){
+        
+        event.preventDefault();
         var mealId = $(this).attr("meal-id");
         console.log(mealId);
         console.log(responseMeals);
@@ -25,31 +25,39 @@ $(document).ready(function() {
             //console.log(clickedMeal);
             var result = responseMeals.find(meal => meal.idMeal === mealId); 
             console.log(result);
-            var recipeInstruction = (result.strInstructions);
+            var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
             console.log(recipeImage);
             //for loop with i
             //for J i=number
             //strIngredients + 
+            //if(!$(this).text()){$(this).append(result)};
+               //console.log(this.text);
             for ( var i = 1; i < 21; i++) {   
             result[`strIngredients${i}`]//creat a new li
-            result[`strMeasure${i}`]
-            //append to a single list item
-            var listitem = `<ol class= "ingredients" ${result[`strIngredients${i}`]}
-                                                    
-            </ol>`;
+            
+            // append to a single list item
+            // var listitem = `<li class= "ingredients"> ${result[`strIngredients${i}`]}result[`strMeasure${i}`]
+                                          
+            //  </li>`;
+               var  listitem="";
                
-            $(this).append(listitem);
+            // $(this).append(listitem);
             console.log(listitem);
             //${result[`strIngredients${i}`]}
             
         }
 
             //strYoutube     strMealThumb
-            $(this).append(recipeInstruction);
+            //$(this).append(recipeInstruction);
+            console.log($(this).children());
             console.log($('.accordion-content'));
-            $(this).append(recipeImage);
+            //$(!$(this).text()(recipeImage);
+            if($(this).children().length< 3 ) {
+                $(this).append(recipeInstruction);
+                $(this).append(recipeImage);
+            };
             
             $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
             //strInstructions
@@ -89,16 +97,12 @@ $(document).ready(function() {
     }
     function registerClickListeners(){
         $(".accordion-item").on('click', grabInput);
-        $(".accordion-content").empty();
+      
         
 
     }       //searchedMeals($(this).text());
     
-    function clear(){
-        $(".accordion-content").empty();
-        //$(".accordion-item").empty();
-
-    }
+    
     $("#mealName").on("keypress", function(){
         if(event.keyCode == 13){
            var meal = ($(this)).val();
