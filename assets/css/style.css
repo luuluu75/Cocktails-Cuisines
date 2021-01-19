@@ -28,7 +28,7 @@ body {
 
 .page-body {
     flex-grow: 1;
-    margin: 50px;
+    margin-top: 50px;
 }
 
 header,
@@ -39,8 +39,15 @@ footer {
 }
 
 h1,
-h4 {
+h3,
+h4,
+.accordion-title {
     font-family: Georgia, 'Times New Roman', Times, Georgia, Times, 'Times New Roman', serif;
+}
+
+h3 {
+    font-weight: bold;
+    color: navy;
 }
 
 img {
@@ -48,54 +55,44 @@ img {
     margin-bottom: 25px;
 }
 
+.image {
+    width: 25%;
+}
+
+.accordion-title {
+    background-color: navy;
+    border-color: lightgray;
+    border-width: 5px;
+    color: white;
+    font-size: large;
+    font-weight: lighter;
+}
+
+.accordion-content {
+    background-color: lightsteelblue;
+    border-top: 5px lightgray;
+}
+
+li {
+    border: 5px gold;
+}
+
 #search-wrapper {
     background-color: pink !important;
     border-radius: 5px;
     padding: 25px;
+    width: auto;
 }
 
-.dropbtn {
-    background-color: lightblue;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
+#searchBar,
+.column,
+select,
+#searchBtn {
+    margin: auto;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: lightgreen;
+.large-2 {
+    margin: 0px;
 }
 
 #searchBtn {
@@ -111,6 +108,8 @@ img {
 #results-wrapper {
     background-color: lightgray;
     border-radius: 5px;
+    margin-top: 25px;
+    padding: 15px;
 }
 
 a {
