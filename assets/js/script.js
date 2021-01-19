@@ -19,7 +19,6 @@ $(document).ready(function() {
         var mealId = $(this).attr("meal-id");
         console.log(mealId);
         console.log(responseMeals);
-
         // var clickedMeal = responseMeals.filter(function(meal){
         //     return meal.idMeal === mealId;
             //console.log(clickedMeal);
@@ -36,6 +35,7 @@ $(document).ready(function() {
                //console.log(this.text);
             for ( var i = 1; i < 21; i++) {   
             result[`strIngredients${i}`]//creat a new li
+        
             
             // append to a single list item
             // var listitem = `<li class= "ingredients"> ${result[`strIngredients${i}`]}result[`strMeasure${i}`]
@@ -48,20 +48,22 @@ $(document).ready(function() {
             //${result[`strIngredients${i}`]}
             
         }
-
+        //added child lookup to append data and fix toggling
             //strYoutube     strMealThumb
             //$(this).append(recipeInstruction);
             console.log($(this).children());
             console.log($('.accordion-content'));
             //$(!$(this).text()(recipeImage);
-            if($(this).children().length< 3 ) {
-                $(this).append(recipeInstruction);
-                $(this).append(recipeImage);
+
+            
+            if($(this).find(".panel").children().length< 1 ) {
+                $(this).find(".panel").append(recipeInstruction);
+                $(this).find(".panel").append(recipeImage);
             };
             
-            $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
-            //strInstructions
-            // })
+            $('#searchResultsTab').foundation('toggle', $(this).find(".panel"));
+            //end changes here
+
         for ( var i = 0; i < 0; i++) {   
             console.log(clickedMeal[i]);
 
@@ -139,19 +141,16 @@ $(document).ready(function() {
             //     </li>`
 
                 var accordianMealTest=       
-                 `<div class="grid-container" id="mainContent">
+                // `<div class="grid-container" id="mainContent">
                 
-                    <ul class="accordion" data-accordion data-allow-all-closed="true" >
-                        <li class="accordion-item" data-accordion-item meal-id= ${response.meals[i].idMeal} >
-                        <!-- Accordion tab title -->
+                    //<ul class="accordion" data-accordion data-allow-all-closed="true" >
+                        `<li class="accordion-item" data-accordion-item meal-id= ${response.meals[i].idMeal} >
+                       
                         <a href="#" class="accordion-title ">${response.meals[i].strMeal}</a>
-                        <div class="accordion-content panel" data-tab-content>
-                           
-                           
+                        <div class="accordion-content panel" data-tab-content> 
                         </div>
-                        </li>
-                    </ul>
-            </div>`
+                        </li>`
+            
             //console.log(accordianMealTest);
             
                 //console.log(meal);
