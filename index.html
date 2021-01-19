@@ -8,7 +8,7 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -26,20 +26,19 @@
 
             <!--Search button for meals or cocktails-->
             <div class="grid-container">
-                <div class="grid-x gri d-margin-x" id="search-wrapper">
+                <div class="grid-x grid-margin-x" id="search-wrapper">
                     <!-- Combine search bar & btn w/meals or cocktails dropdown selection -->
                     <div class="column large-6">
                         <input id="searchBar" type="text" name="search" placeholder="Enter Meal or Cocktail name...">
                     </div>
-                    
+
                     <div class="column large-4">
-                        <div class="dropdownMenu">
-                            <select>
+
+                        <select class="dropdownMenu">
                                 <option value="default"></option>
                                 <option value="meals">Meals</option>
                                 <option value="drinks">Drinks</option>
                             </select>
-                        </div>
                     </div>
 
                     <div class="column large-2">
@@ -53,20 +52,19 @@
                 <h3>Results</h3>
                 <ul class="accordion" data-accordion data-allow-all-closed="true" id="searchResultsTab">
                     <!--Create below in JS-->
-
                 </ul>
             </div>
 
             <!--placement of embedded video-->
-            <div class="grid-container" id="mediaContent">
+            <!-- <div class="grid-container" id="mediaContent">
                 <div class="media-object">
                     <div class="media-object-section middle">
                         <div class="thumbnail">
-                            <img src= "assets/img/media-object/avatar-2.jpg">
+                            <img src="assets/img/media-object/avatar-2.jpg">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!--display results - max 20 results
             <div class="grid-x" id="searchResults">
@@ -75,24 +73,24 @@
                     <h3>Your Results</h3>
                 </div>
             </div>-->
-
-        <!--footer-->
-        <footer>
-            <h4>Copyright by Foodie Friends</h4>
-            <p>
-                <a href="#">luuluu75</a> | 
-                <a href="#">MissNG-Git</a> | 
-                <a href="#">FraserClarke</a> | 
-                <a href="#">aksCo</a>
-            </p>
-        </footer>
     </div>
 
+    <!--footer-->
+    <footer>
+        <h4>Copyright by Foodie Friends</h4>
+        <p>
+            <a href="#">luuluu75</a> | 
+            <a href="#">MissNG-Git</a> | 
+            <a href="#">FraserClarke</a> | 
+            <a href="#">aksCo</a>
+        </p>
+    </footer>
+
+
     <!-- Compressed JavaScript -->
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script src="assets/js/drinkscript.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
