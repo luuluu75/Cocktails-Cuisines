@@ -5,8 +5,8 @@ $(document).ready(function() {
     var responseMeals;
     
     var searchedMeals = JSON.parse(localStorage.getItem("meals")) || []; 
-    $("#mealSearchBtn").on("click", function(){
-        var meals = $("#mealName").val();
+    $("#searchBtn").on("click", function(){
+        var meals = $("#searchBar").val();
         searchMeals(meals);
 
 
