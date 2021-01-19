@@ -32,12 +32,13 @@ $(document).ready(function() {
             //for J i=number
             //strIngredients + 
             for ( var i = 1; i < 21; i++) {   
+                //$("#temp").empty();
             result[`strIngredients${i}`]//creat a new li
             result[`strMeasure${i}`]
             //append to a single list item
             var listitem = `<ol class= "ingredients" ${result[`strIngredients${i}`]}
                                                     
-            </li>`;
+            </ol>`;
                
             $('.accordion-content').append(listitem);
             console.log(listitem);
@@ -57,16 +58,18 @@ $(document).ready(function() {
             console.log(clickedMeal[i]);
 
         }
-            var acc = document.getElementsByClassName("accordion-item");
-            var i;
 
-            for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
+       
+            // var acc = document.getElementsByClassName("accordion-item");
+            // var i;
+
+            // for (i = 0; i < acc.length; i++) {
+            // acc[i].addEventListener("click", function() {
+            //     this.classList.toggle("active");
 
                
-            });
-            }
+            // });
+            // }
             
 
         // let recipeInstuction = clickedMeal.strInstruction
@@ -91,7 +94,9 @@ $(document).ready(function() {
 
     }       //searchedMeals($(this).text());
     
-    
+    function clear(){
+        $(".accordion-content").empty();
+    }
 
     
     $("#mealName").on("keypress", function(){
@@ -109,6 +114,7 @@ $(document).ready(function() {
     
     
     function searchMeals(meals){
+        clear()
         saveMealsToLS(meals);
     //Food Ajax Call
     var queryURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`
@@ -118,6 +124,7 @@ $(document).ready(function() {
         url: queryURL,
          dataType: "json",  
         success: function(response){
+            $("#searchResultsTab").empty();
             responseMeals = response.meals
             console.log(response.meals);
             //console.log(queryURL);
