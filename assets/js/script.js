@@ -14,6 +14,7 @@ $(document).ready(function() {
     })
 
     function grabInput(){
+        clear();
 
         var mealId = $(this).attr("meal-id");
         console.log(mealId);
@@ -26,7 +27,7 @@ $(document).ready(function() {
             console.log(result);
             var recipeInstruction = (result.strInstructions);
             console.log(recipeInstruction);
-            var recipeImage = `<img src= ${result.strMealThumb}>`;
+            var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
             console.log(recipeImage);
             //for loop with i
             //for J i=number
@@ -37,19 +38,19 @@ $(document).ready(function() {
             //append to a single list item
             var listitem = `<ol class= "ingredients" ${result[`strIngredients${i}`]}
                                                     
-            </li>`;
+            </ol>`;
                
-            $('.accordion-content').append(listitem);
+            $(this).append(listitem);
             console.log(listitem);
             //${result[`strIngredients${i}`]}
             
         }
 
             //strYoutube     strMealThumb
-            $(".accordion-content").append(recipeInstruction);
+            $(this).append(recipeInstruction);
             console.log($('.accordion-content'));
-            $('.accordion-content').append(recipeImage);
-
+            $(this).append(recipeImage);
+            
             $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
             //strInstructions
             // })
@@ -88,12 +89,16 @@ $(document).ready(function() {
     }
     function registerClickListeners(){
         $(".accordion-item").on('click', grabInput);
+        $(".accordion-content").empty();
+        
 
     }       //searchedMeals($(this).text());
     
-    
+    function clear(){
+        $(".accordion-content").empty();
+        //$(".accordion-item").empty();
 
-    
+    }
     $("#mealName").on("keypress", function(){
         if(event.keyCode == 13){
            var meal = ($(this)).val();
