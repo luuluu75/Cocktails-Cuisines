@@ -137,6 +137,7 @@ $(document).ready(function() {
                 break;
             }
             }
+            
 
             var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
            console.log(recipeIngredient);
