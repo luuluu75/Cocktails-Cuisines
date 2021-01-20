@@ -31,10 +31,11 @@ $(document).ready(function () {
             
             var result = responseMeals.find(meal => meal.idMeal === mealId);
             console.log(result);
-            var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
+            var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
             console.log(recipeImage);
+            // var recipeVideo = `<iframe width="420" height="315" value=${result.strYoutube} src= ${result.strYoutube}&embedded=true</iframe>`;
 
             
 
@@ -52,7 +53,7 @@ $(document).ready(function () {
             }
 
             // var recipeInstruction = `<li> ${instructions.map(instruction => `<li>${instruction}</li>`).split('.')} </li>`;
-            var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
             console.log(recipeIngredient);
 
 
@@ -67,6 +68,7 @@ $(document).ready(function () {
                 $(this).find(".panel").append(recipeIngredient);
                 $(this).find(".panel").append(recipeInstruction);
                 $(this).find(".panel").append(recipeImage);
+                // $(this).find(".panel").append(recipeVideo);
             };
 
             $('#searchResultsTab').foundation('toggle', $(this).find(".panel"));
@@ -93,7 +95,7 @@ $(document).ready(function () {
             console.log(result);
 
 
-            var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
+            var recipeInstruction = $(`<div> ${result.strInstructions} </div>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strDrinkThumb}>`;
             console.log(recipeImage);
@@ -109,7 +111,7 @@ $(document).ready(function () {
             }
 
 
-            var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+            var recipeIngredient = `<li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
             console.log(recipeIngredient);
 
 
