@@ -91,7 +91,8 @@ $(document).ready(function() {
 
             //strInstructions
             // })
-            for (var i = 0; i < 0; i++) {
+            for (var i = 0; i < 0; i++) 
+            {
                 console.log(clickedMeal[i]);
 
             }
@@ -99,7 +100,7 @@ $(document).ready(function() {
             var i;
 
             for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
+                    acc[i].addEventListener("click", function() {
                     this.classList.toggle("active");
 
 
@@ -172,7 +173,8 @@ $(document).ready(function() {
             var i;
 
             for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
+                acc[i].addEventListener("click", function() 
+                {
                     this.classList.toggle("active");
 
 
@@ -187,25 +189,64 @@ $(document).ready(function() {
 
     } //searchedMeals($(this).text());
 
-    if (($(".dropdownMenu").val() === "meals")) {
-        $("#mealName").on("keypress", function() {
-            if (event.keyCode == 13) {
+    // if (($(".dropdownMenu").val() === "meals")) 
+    // {
+    //     $("#searchBar").on("keypress", function() {
+    //         if (event.keyCode === 13) {
+    //             var meal = ($(this)).val();
+    //             console.log(meal);
+    //             searchMeals(meal);
+    //         }
+    //     })
+    // } else if (($(".dropdownMenu").val() === "drinks")) 
+    // {
+    //     $("#searchBar").on("keypress", function() {
+    //         if (event.keyCode === 13) {
+    //             var drink = ($(this)).val();
+    //             console.log(drink);
+    //             searchDrinks(drink);
+    //         }
+    //     })
+    // }
+
+    // if (($(".dropdownMenu").val() === "meals")) 
+    // {
+    //     $("#searchBar").on("keypress", function() {
+    //         if (event.keyCode === 13) {
+    //             var meal = ($(this)).val();
+    //             console.log(meal);
+    //             searchMeals(meal);
+    //         }
+    //     })
+    // } else if (($(".dropdownMenu").val() === "drinks")) 
+    // {
+    //     $("#searchBar").on("keypress", function() {
+    //         if (event.keyCode === 13) {
+    //             var drink = ($(this)).val();
+    //             console.log(drink);
+    //             searchDrinks(drink);
+    //         }
+    //     })
+    // }
+
+    $("#searchBtn").on("keypress", function() 
+    {
+        if ($(".dropdownMenu").val() === "meals") 
+        {
+            if (event.keyCode === 13) {
                 var meal = ($(this)).val();
                 console.log(meal);
                 searchMeals(meal);
             }
-        })
-    } else if (($(".dropdownMenu").val() === "drinks")) {
-        $("#drinkName").on("keypress", function() {
-            if (event.keyCode == 13) {
+        } else if ($(".dropdownMenu").val() === "drinks") 
+        {
+            if (event.keyCode === 13) {
                 var drink = ($(this)).val();
                 console.log(drink);
                 searchDrinks(drink);
             }
-        })
-    }
-
-
+        }
+    });
     // $("#drinksName").on("keypress", function(){
 
     // })
