@@ -1,74 +1,94 @@
 $(document).ready(function() {
 
-    var searchResults;
-    var responseMeals;
-    var responseDrinks;
+            var searchResults;
+            var responseMeals;
+            var responseDrinks;
 
-    var searchedMeals = JSON.parse(localStorage.getItem("meals")) || [];
-    var LookupDrinks = JSON.parse(localStorage.getItem("drinks")) || [];
+            var searchedMeals = JSON.parse(localStorage.getItem("meals")) || [];
+            var LookupDrinks = JSON.parse(localStorage.getItem("drinks")) || [];
 
-    //console.log($(".dropdownMenu").val()) //default
+            //console.log($(".dropdownMenu").val()) //default
 
-    $("#searchBtn").on("click", function() {
-        if ($(".dropdownMenu").val() === "meals") {
-            var meals = $("#searchBar").val();
-            searchMeals(meals);
-        } else if ($(".dropdownMenu").val() === "drinks") {
-            var drinks = $("#searchBar").val();
-            searchDrinks(drinks);
-        }
-    })
+            $("#searchBtn").on("click", function() {
+                if ($(".dropdownMenu").val() === "meals") {
+                    var meals = $("#searchBar").val();
+                    searchMeals(meals);
+                } else if ($(".dropdownMenu").val() === "drinks") {
+                    var drinks = $("#searchBar").val();
+                    searchDrinks(drinks);
+                }
+            })
+
+            function grabInput(event) {
+
+                event.preventDefault();
+                if ($(".dropdownMenu").val() === "meals") {
+                    var mealId = $(this).attr("meal-id");
+                    console.log(mealId);
+                    console.log(responseMeals);
+
+                    // var clickedMeal = responseMeals.filter(function(meal){
+                    //     return meal.idMeal === mealId;
+                    //console.log(clickedMeal);
+                    var result = responseMeals.find(meal => meal.idMeal === mealId);
+                    console.log(result);
+                    var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
+                    console.log(recipeInstruction);
+                    var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
+                    console.log(recipeImage);
+
+                    // const instructions = [];
+
+                    // for (let line = 1; line <= 1000; line++) 
+                    // {
+                    //     if (result[`strInstructions${line}`]) {
+                    // //         instructions.push(`${result[`strInstructions${i}`]}`);
+                    // // } else {
+                    // //     // Stop if there are no more instructions
+                    // //     break;
+                    // // }
+                    // // }
 
 
+                    //var recipeInstruction = `<div> <li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li> </div>`;
 
-    function grabInput(event) {
+                    // Get all ingredients from the object. Up to 20
+                    const ingredients = [];
+                    for (let i = 1; i <= 20; i++) {
+                        if (result[`strIngredient${i}`]) {
+                            ingredients.push(`${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}`);
+                    } else {
+                        // Stop if there are no more ingredients
+                        break;
+                    }
+                    }
+                    
+            // var recipeInstruction = `<li> ${instructions.map(instruction => `<li>${instruction}</li>`).split('.')} </li>`;
+           var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+           console.log(recipeIngredient);
 
-        event.preventDefault();
-        if ($(".dropdownMenu").val() === "meals") {
-            var mealId = $(this).attr("meal-id");
-            console.log(mealId);
-            console.log(responseMeals);
-
-            // var clickedMeal = responseMeals.filter(function(meal){
-            //     return meal.idMeal === mealId;
-            //console.log(clickedMeal);
-            var result = responseMeals.find(meal => meal.idMeal === mealId);
-            console.log(result);
-            var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
-            console.log(recipeInstruction);
-            var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
-            console.log(recipeImage);
-            //for loop with i
-            //for J i=number
-            //strIngredients + 
-            //if(!$(this).text()){$(this).append(result)};
-            //console.log(this.text);
-            for (var i = 1; i < 21; i++) {
-                result[`strIngredients${i}`] //creat a new li
-
-                // append to a single list item
-                // var listitem = `<li class= "ingredients"> ${result[`strIngredients${i}`]}result[`strMeasure${i}`]
-
-                //  </li>`;
-                var listitem = "";
-
-                // $(this).append(listitem);
-                console.log(listitem);
-                //${result[`strIngredients${i}`]}
-
-            }
 
             //strYoutube     strMealThumb
             //$(this).append(recipeInstruction);
             console.log($(this).children());
             console.log($('.accordion-content'));
-            //$(!$(this).text()(recipeImage);
-            if ($(this).children().length < 3) {
-                $(this).append(recipeInstruction);
-                $(this).append(recipeImage);
+
+
+            // if ($(this).children().length < 3) {
+            //    $(this).append(recipeInstruction);
+            //  $(this).append(recipeImage);
+            //  };
+            if ($(this).find(".panel").children().length < 1) {
+                $(this).find(".panel").append(recipeIngredient);
+                $(this).find(".panel").append(recipeInstruction);
+                $(this).find(".panel").append(recipeImage);
             };
 
-            $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
+            $('#searchResultsTab').foundation('toggle', $(this).find(".panel"));
+
+
+
+
             //strInstructions
             // })
             for (var i = 0; i < 0; i++) {
@@ -97,6 +117,8 @@ $(document).ready(function() {
             //console.log(clickedMeal);
             var result = responseDrinks.find(drink => drink.idDrink === drinkId);
             console.log(result);
+
+
             var recipeInstruction = $(`<div>${result.strInstructions} </div>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strDrinkThumb}>`;
@@ -106,32 +128,39 @@ $(document).ready(function() {
             //strIngredients + 
             //if(!$(this).text()){$(this).append(result)};
             //console.log(this.text);
-            for (var i = 1; i < 21; i++) {
-                result[`strIngredients${i}`] //creat a new li
-
-                // append to a single list item
-                // var listitem = `<li class= "ingredients"> ${result[`strIngredients${i}`]}result[`strMeasure${i}`]
-
-                //  </li>`;
-                var listitem = "";
-
-                // $(this).append(listitem);
-                console.log(listitem);
-                //${result[`strIngredients${i}`]}
-
+            const ingredients = [];
+            for (let i = 1; i <= 20; i++) {
+                if (result[`strIngredient${i}`]) {
+                    ingredients.push(`${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}`);
+            } else {
+                // Stop if there are no more ingredients
+                break;
             }
+            }
+
+            var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+           console.log(recipeIngredient);
+            
 
             //strYoutube     strMealThumb
             //$(this).append(recipeInstruction);
             console.log($(this).children());
             console.log($('.accordion-content'));
             //$(!$(this).text()(recipeImage);
-            if ($(this).children().length < 3) {
-                $(this).append(recipeInstruction);
-                $(this).append(recipeImage);
+            // if ($(this).children().length < 3) {
+            //     $(this).append(recipeInstruction);
+            //     $(this).append(recipeImage);
+            // };
+            if ($(this).find(".panel").children().length < 1) {
+                $(this).find(".panel").append(recipeIngredient);
+                $(this).find(".panel").append(recipeInstruction);
+                $(this).find(".panel").append(recipeImage);
             };
 
-            $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
+            $('#searchResultsTab').foundation('toggle', $(this).find(".panel"));
+
+
+            // $('#searchResultsTab').foundation('toggle', $(`.accordion-content`));
             //strInstructions
             // })
             for (var i = 0; i < 0; i++) {
