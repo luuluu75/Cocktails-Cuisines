@@ -10,6 +10,7 @@ $(document).ready(function () {
     //console.log($(".dropdownMenu").val()) //default
 
     $("#searchBtn").on("click", function () {
+        $("#searchResultsTab").empty()
         if ($(".dropdownMenu").val() === "meals") {
             var meals = $("#searchBar").val();
             searchMeals(meals);
