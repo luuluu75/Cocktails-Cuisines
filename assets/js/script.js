@@ -137,6 +137,7 @@ $(document).ready(function() {
                 break;
             }
             }
+            
 
             var recipeIngredient = `<li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
            console.log(recipeIngredient);
@@ -183,8 +184,6 @@ $(document).ready(function() {
 
     function registerClickListeners() {
         $(".accordion-item").on('click', grabInput);
-
-
 
     } //searchedMeals($(this).text());
 
@@ -265,9 +264,9 @@ $(document).ready(function() {
                 registerClickListeners()
             }
 
-        })
+        }
 
-    }
+    })}
 
     function searchDrinks(drinks) {
         saveDrinksToLS(drinks);
