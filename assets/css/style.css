@@ -26,10 +26,9 @@ body {
     flex-direction: column;
 }
 
-header {
-    font-size: xx-large;
+header,
+#searchBtn {
     padding: 15px;
-    border-bottom: 15px mediumseagreen;
 }
 
 .page-body {
@@ -44,26 +43,29 @@ footer {
   color: white;
 }
 
-h1,
-h2,
-h3,
-h4,
+h1, h2, h3, h4,
 .accordion-title {
     font-family: Georgia, 'Times New Roman', Times, Georgia, Times, 'Times New Roman', serif;
 }
 
-h2 {
+h2, h3 {
     font-weight: bold;
+}
+
+h2 {
     color: navy;
 }
 
 h3 {
-    font-weight: bold;
     color: mediumaquamarine;
 }
 
-img {
+img, 
+#search-wrapper {
     width: auto;
+}
+
+img {
     margin-bottom: 25px;
 }
 
@@ -79,8 +81,7 @@ img {
     background-color: navy;
     border-color: lightgray;
     color: white;
-    font-size: x-large;
-    font-weight: lighter;
+    font-size: large;
 }
 
 .accordion-content {
@@ -94,38 +95,30 @@ img {
 }
 
 #search-wrapper {
-    background-color: pink !important;
+    background-color: pink;
+}
+
+#search-wrapper,
+#searchBtn,
+#results-wrapper {
     border-radius: 5px;
-    padding: 25px;
-    width: auto;
-}
-
-#searchBar,
-.column,
-select,
-#searchBtn {
-    margin: auto;
-}
-
-.large-2 {
-    margin: 0px;
 }
 
 #searchBtn {
     background-color: grey;
-    padding: 16px;
-    font-size: 16px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     color: white;
 }
 
 #results-wrapper {
     background-color: lightgray;
-    border-radius: 5px;
     margin-top: 25px;
     padding: 20px;
+}
+
+#results-wrapper,
+footer {
     width: 100%;
 }
 
@@ -137,12 +130,22 @@ a {
     padding: 0px;
 }
 
-p {
+#search-wrapper,
+footer {
+    padding: 25px;
+}
+
+#searchBar,
+.column,
+select,
+#searchBtn {
+    margin: auto;
+}
+
+.large-2, p {
     margin: 0px;
 }
 
 footer {
     margin-top: 15px;
-    padding: 25px;
-    width: 100%;
 }
