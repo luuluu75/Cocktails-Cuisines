@@ -3,7 +3,7 @@
 **[Cocktails & Cuisines](https://luuluu75.github.io//Cocktails-Cuisines/)**
 by [luuluu75](https://github.com/luuluu75//) | [MissNG-Git](https://github.com/MissNG-Git) | [FraserClarke](https://github.com/FraserClarke) | [aksCo](https://github.com/aksCo)
 
-Using this foodie-friendly application will allow a user to search for different cuisine or cocktail recipes by name. This app will run in the browser and features dynamic HTML, styling with CSS in conjunction with the [Foundation framework](https://get.foundation/develop/getting-started.html) powered by jQuery.
+Using this foodie- & drinkie-friendly application will allow a user to search for different cuisine or cocktail recipes by name. This app will run in the browser and features dynamic HTML, styling with CSS in conjunction with the [Foundation framework](https://get.foundation/develop/getting-started.html) powered by jQuery.
 
 ## Objectives
 
@@ -18,9 +18,14 @@ Using this foodie-friendly application will allow a user to search for different
 
 The following image shows the web application's appearance & functionality:
 
-<img src="/assets/Main-Wireframe.png" alt="Main Wireframe" width="150"/>
-
-<img src="/assets/Recipe-Wireframe.png" alt="Recipe Wireframe" width="150"/>
+<!-- First Header | Second Header
+:------------: | :-------------:
+Content cell 1 | Content cell 2
+Content column 1 | Content column 2 -->
+<p float="left">
+    <img src="/assets/imgs/Main-Wireframe.png" alt="Main Wireframe" width="200"/>
+    <img src="/assets/imgs/Recipe-Wireframe.png" alt="Recipe Wireframe" width="200"/>
+</p>
 
 ### Overview of Code Functionality
 
@@ -36,9 +41,9 @@ The following image shows the web application's appearance & functionality:
 
 * Select search bar and enter the name of a 'meal' or 'cocktail'
 
-* Click on the dropdown menu at the end of the search bar to select whether user is searching for a 'meal' or 'cocktail'
+* Click on the dropdown menu toward end of the search bar to select whether user is searching for a 'meal' or 'cocktail'
 
-* Click on the **search** button to run the search
+* Click on the **search** button to run the search 🔎
 
 * Website will then generate a list of 'meal' or 'cocktail' recipes by name
 
