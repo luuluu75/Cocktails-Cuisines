@@ -5,6 +5,8 @@ by [luuluu75](https://github.com/luuluu75//) | [MissNG-Git](https://github.com/M
 
 Using this foodie- & drinkie-friendly application will allow a user to search for different cuisine or cocktail recipes by name. This app will run in the browser and features dynamic HTML, styling with CSS in conjunction with the [Foundation framework](https://get.foundation/develop/getting-started.html) powered by jQuery.
 
+Have a look at our **[Presentation here](https://github.com/luuluu75/Cocktails-Cuisines/tree/main/assets)**
+
 ## Objectives
 
 ```
@@ -18,10 +20,6 @@ Using this foodie- & drinkie-friendly application will allow a user to search fo
 
 The following image shows the web application's appearance & functionality:
 
-<!-- First Header | Second Header
-:------------: | :-------------:
-Content cell 1 | Content cell 2
-Content column 1 | Content column 2 -->
 <p float="left">
     <img src="/assets/imgs/Main-Wireframe.png" alt="Main Wireframe" width="200"/>
     <img src="/assets/imgs/Recipe-Wireframe.png" alt="Recipe Wireframe" width="200"/>
