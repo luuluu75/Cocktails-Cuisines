@@ -101,7 +101,7 @@ $(document).ready(function () {
       var recipeImage = `<img class="image" src= ${result.strDrinkThumb}>`;
       console.log(recipeImage);
 
-      if (result.strYoutube !== null) {
+      if (result.strYoutube != null) {
         var recipeVideo = $(
           `<div><h3>Video</h3><iframe width="420" height="315" value=${result.strYoutube.slice(
             -11
