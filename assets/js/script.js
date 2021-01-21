@@ -31,7 +31,7 @@ $(document).ready(function() {
 
                     var result = responseMeals.find(meal => meal.idMeal === mealId);
                     console.log(result);
-                    var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
+                    var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div> <br>`)
                     console.log(recipeInstruction);
                     var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
                     console.log(recipeImage);
@@ -56,7 +56,7 @@ $(document).ready(function() {
             }
 
             // var recipeInstruction = `<li> ${instructions.map(instruction => `<li>${instruction}</li>`).split('.')} </li>`;
-            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li> <br>`;
             console.log(recipeIngredient);
 
 
@@ -68,9 +68,9 @@ $(document).ready(function() {
 
             
             if ($(this).find(".panel").children().length < 1) {
+                $(this).find(".panel").append(recipeImage);                
                 $(this).find(".panel").append(recipeIngredient);
                 $(this).find(".panel").append(recipeInstruction);
-                $(this).find(".panel").append(recipeImage);
                 $(this).find(".panel").append(recipeVideo);
                 // $(this).find(".panel").append(recipeVideo);
             };
@@ -99,7 +99,7 @@ $(document).ready(function() {
             console.log(result);
 
 
-            var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
+            var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div> <br>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strDrinkThumb}>`;
             console.log(recipeImage);
@@ -122,7 +122,7 @@ $(document).ready(function() {
             }
 
 
-            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li> <br>`;
             console.log(recipeIngredient);
             
 
@@ -132,9 +132,9 @@ $(document).ready(function() {
             console.log($('.accordion-content'));
            
             if ($(this).find(".panel").children().length < 1) {
+                $(this).find(".panel").append(recipeImage);                
                 $(this).find(".panel").append(recipeIngredient);
                 $(this).find(".panel").append(recipeInstruction);
-                $(this).find(".panel").append(recipeImage);
                 $(this).find(".panel").append(recipeVideo);
             };
 
