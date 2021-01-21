@@ -1,51 +1,54 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    var searchResults;
-    var responseMeals;
-    var responseDrinks;
+            var searchResults;
+            var responseMeals;
+            var responseDrinks;
 
-    var searchedMeals = JSON.parse(localStorage.getItem("meals")) || [];
-    var LookupDrinks = JSON.parse(localStorage.getItem("drinks")) || [];
+            var searchedMeals = JSON.parse(localStorage.getItem("meals")) || [];
+            var LookupDrinks = JSON.parse(localStorage.getItem("drinks")) || [];
 
-    //console.log($(".dropdownMenu").val()) //default
+            //console.log($(".dropdownMenu").val()) //default
 
-    $("#searchBtn").on("click", function () {
-        $("#searchResultsTab").empty()
-        if ($(".dropdownMenu").val() === "meals") {
-            var meals = $("#searchBar").val();
-            searchMeals(meals);
-        } else if ($(".dropdownMenu").val() === "drinks") {
-            var drinks = $("#searchBar").val();
-            searchDrinks(drinks);
-        }
-    })
+            $("#searchBtn").on("click", function() {
+                $("#searchResultsTab").empty()
+                if ($(".dropdownMenu").val() === "meals") {
+                    var meals = $("#searchBar").val();
+                    searchMeals(meals);
+                } else if ($(".dropdownMenu").val() === "drinks") {
+                    var drinks = $("#searchBar").val();
+                    searchDrinks(drinks);
+                }
+            })
 
-    function grabInput(event) {
+            function grabInput(event) {
 
-        event.preventDefault();
-        if ($(this).attr("type") === "meal") {
-            var mealId = $(this).attr("meal-id");
-            console.log(mealId);
-            console.log(responseMeals);
+                event.preventDefault();
+                if ($(this).attr("type") === "meal") {
+                    var mealId = $(this).attr("meal-id");
+                    console.log(mealId);
+                    console.log(responseMeals);
 
-            
-            var result = responseMeals.find(meal => meal.idMeal === mealId);
-            console.log(result);
-            var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
-            console.log(recipeInstruction);
-            var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
-            console.log(recipeImage);
-            // var recipeVideo = `<iframe width="420" height="315" value=${result.strYoutube} src= ${result.strYoutube}&embedded=true</iframe>`;
 
-            
+                    var result = responseMeals.find(meal => meal.idMeal === mealId);
+                    console.log(result);
+                    var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
+                    console.log(recipeInstruction);
+                    var recipeImage = `<img class="image" src= ${result.strMealThumb}>`;
+                    console.log(recipeImage);
 
-            //var recipeInstruction = `<div> <li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li> </div>`;
+                    if (result.strYoutube != null) {
+                        var recipeVideo = $(`<div><h3> Video</h3><iframe width="420" height="315" value=${result.strYoutube.slice(-11)} src= "https://www.youtube.com/embed/${result.strYoutube.slice(-11)}" &embedded=true</iframe>`);
 
-            // Get all ingredients from the object. Up to 20
-            const ingredients = [];
-            for (let i = 1; i <= 20; i++) {
-                if (result[`strIngredient${i}`]) {
-                    ingredients.push(`${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}`);
+                    }
+
+
+                    //var recipeInstruction = `<div> <li> ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li> </div>`;
+
+                    // Get all ingredients from the object. Up to 20
+                    const ingredients = [];
+                    for (let i = 1; i <= 20; i++) {
+                        if (result[`strIngredient${i}`]) {
+                            ingredients.push(`${result[`strIngredient${i}`]} - ${result[`strMeasure${i}`]}`);
                 } else {
                     // Stop if there are no more ingredients
                     break;
@@ -68,6 +71,7 @@ $(document).ready(function () {
                 $(this).find(".panel").append(recipeIngredient);
                 $(this).find(".panel").append(recipeInstruction);
                 $(this).find(".panel").append(recipeImage);
+                $(this).find(".panel").append(recipeVideo);
                 // $(this).find(".panel").append(recipeVideo);
             };
 
@@ -95,10 +99,17 @@ $(document).ready(function () {
             console.log(result);
 
 
-            var recipeInstruction = $(`<div> ${result.strInstructions} </div>`)
+            var recipeInstruction = $(`<div><h3>Instructions</h3> ${result.strInstructions} </div>`)
             console.log(recipeInstruction);
             var recipeImage = `<img class="image" src= ${result.strDrinkThumb}>`;
             console.log(recipeImage);
+
+            if (result.strYoutube != null)
+            {
+                var recipeVideo = $(`<div><h3>Video</h3><iframe width="420" height="315" value=${result.strYoutube.slice(-11)} src= "https://www.youtube.com/embed/${result.strYoutube.slice(-11)}" &embedded=true</iframe>`);
+            }
+            
+
             
             const ingredients = [];
             for (let i = 1; i <= 20; i++) {
@@ -111,9 +122,9 @@ $(document).ready(function () {
             }
 
 
-            var recipeIngredient = `<li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
+            var recipeIngredient = `<h3>Ingredients</h3><li>  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')} </li>`;
             console.log(recipeIngredient);
-
+            
 
             //strYoutube     strMealThumb
             //$(this).append(recipeInstruction);
@@ -124,6 +135,7 @@ $(document).ready(function () {
                 $(this).find(".panel").append(recipeIngredient);
                 $(this).find(".panel").append(recipeInstruction);
                 $(this).find(".panel").append(recipeImage);
+                $(this).find(".panel").append(recipeVideo);
             };
 
             $('#searchResultsTab').foundation('toggle', $(this).find(".panel"));
