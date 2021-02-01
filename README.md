@@ -24,6 +24,7 @@ The following image shows the web application's appearance & functionality:
     <img src="/assets/imgs/Main-Wireframe.png" alt="Main Wireframe" width="200"/>
     <img src="/assets/imgs/Recipe-Wireframe.png" alt="Recipe Wireframe" width="200"/>
 </p>
+<img src="/assets/imgs/Deployed.png" alt="Deployed Home Page" width="200"/>
 
 ### Overview of Code Functionality
 
